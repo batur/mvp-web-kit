@@ -13,7 +13,6 @@ import vercel from "@astrojs/vercel/serverless";
 export default defineConfig({
   integrations: [
     react(),
-    node(),
     image({
       serviceEntryPoint: "@astrojs/image/sharp",
     }),
