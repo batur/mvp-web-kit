@@ -1,14 +1,25 @@
 ---
 export interface Props {
   title: string;
+  meta?: {
+    description?: string;
+  };
 }
 
-const { title } = Astro.props;
+const { title, meta } = Astro.props;
 ---
 
 <html lang='en'>
   <head>
     <meta charset='UTF-8' />
+    {
+      meta?.description && (
+        <meta
+          name='description'
+          content={meta.description}
+        />
+      )
+    }
     <meta
       name='viewport'
       content='width=device-width'
