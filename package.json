@@ -1,14 +1,30 @@
 {
-  "name": "@example/basics",
+  "name": "mvp-web-kit",
+  "author": {
+    "name": "Batur",
+    "email": "ta2ulk@batur.io"
+  },
+  "description": "MVP Web Kit with Astro, React, Tailwind, Firebase, and more.",
+  "license": "MIT",
   "type": "module",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
+    "build:local": "NODE_ENV='development' astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "preview:local": "NODE_ENV='development' astro preview",
+    "astro": "astro",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "test:unit": "vitest",
+    "test:unit:ci": "vitest run",
+    "test:unit:cov": "vitest run --coverage",
+    "release": "standard-version"
   },
   "dependencies": {
     "@astrojs/image": "^0.13.0",
@@ -23,12 +39,30 @@
     "@types/react": "^18.0.21",
     "@types/react-dom": "^18.0.6",
     "astro": "^2.0.0",
+    "daisyui": "^2.49.0",
+    "firebase": "^9.16.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "sharp": "^0.31.3",
-    "tailwindcss": "^3.0.24"
+    "tailwindcss": "^3.0.24",
+    "zustand": "^4.3.2"
   },
   "devDependencies": {
-    "sass": "^1.57.1"
+    "@commitlint/cli": "^17.4.2",
+    "@commitlint/config-conventional": "^17.4.2",
+    "@typescript-eslint/eslint-plugin": "^5.49.0",
+    "@typescript-eslint/parser": "^5.49.0",
+    "@vitest/coverage-istanbul": "^0.28.2",
+    "eslint": "^8.32.0",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-plugin-astro": "^0.23.0",
+    "eslint-plugin-jsx-a11y": "^6.7.1",
+    "eslint-plugin-prettier": "^4.2.1",
+    "husky": "^8.0.3",
+    "prettier": "^2.8.3",
+    "prettier-plugin-astro": "^0.7.2",
+    "sass": "^1.57.1",
+    "standard-version": "^9.5.0",
+    "vitest": "^0.28.2"
   }
 }

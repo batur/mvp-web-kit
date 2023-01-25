@@ -19,9 +19,19 @@ export default defineConfig({
     mdx(),
     partytown(),
     prefetch(),
-    sitemap(),
+    sitemap({
+      changefreq: "weekly",
+      priority: 0.7,
+      customPages: ["https://astro.build"],
+    }),
     tailwind(),
   ],
+  site: "https://astro.build",
   output: "server",
-  adapter: vercel(),
+  adapter:
+    process.env.NODE_ENV === "production"
+      ? vercel()
+      : node({
+          mode: "middleware",
+        }),
 });
