@@ -7,7 +7,7 @@ export default getViteConfig({
     // globals: true,
     coverage: {
       provider: "istanbul",
-      reporter: ["text-summary","text"],
-    }
+      reporter: ["text-summary", "text"],
+    },
   },
 });
