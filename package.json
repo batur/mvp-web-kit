@@ -1,5 +1,11 @@
 {
-  "name": "@example/basics",
+  "name": "mvp-web-kit",
+  "author": {
+    "name": "Batur",
+    "email": "ta2ulk@batur.io"
+  },
+  "description": "MVP Web Kit with Astro, React, Tailwind, Firebase, and more.",
+  "license": "MIT",
   "type": "module",
   "version": "0.1.0",
   "private": true,
