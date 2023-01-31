@@ -1,5 +1,13 @@
-import { atom as nanoAtom } from "nanostores";
+import { create } from "zustand";
 
-const atom = nanoAtom<string>("Hello World");
+interface HelloState {
+  text: string;
+  setText: (text: string) => void;
+}
 
-export default { atom };
+const useHelloStore = create<HelloState>((set) => ({
+  text: "Hello World",
+  setText: (text: string) => set({ text }),
+}));
+
+export default useHelloStore;

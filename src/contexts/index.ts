@@ -1,3 +1,3 @@
-import hello from "./hello";
+import helloStore from "./hello";
 
-export { hello };
+export { helloStore };

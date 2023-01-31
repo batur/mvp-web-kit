@@ -1,27 +1,21 @@
 import type { FC } from "react";
 
-import { useStore } from "@nanostores/react";
-
-import { hello } from "@/contexts";
+import { helloStore } from "@/contexts";
 
 const Content: FC = () => {
-  const helloAtom = useStore(hello.atom);
+  const { text, setText } = helloStore();
 
   function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
-    hello.atom.set(e.target.value);
+    setText(e.target.value);
   }
 
   return (
     <div>
       <h1>Content</h1>
       <h2>Store</h2>
-      <p>{helloAtom}</p>
-      <p>{helloAtom.length}</p>
-      <input
-        className="input"
-        onChange={(e) => handleChange(e)}
-        value={helloAtom}
-      />
+      <p>{text}</p>
+      <p>{text.length}</p>
+      <input className="input" onChange={(e) => handleChange(e)} value={text} />
     </div>
   );
 };
