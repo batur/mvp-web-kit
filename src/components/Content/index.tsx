@@ -17,7 +17,11 @@ const Content: FC = () => {
       <h2>Store</h2>
       <p>{helloAtom}</p>
       <p>{helloAtom.length}</p>
-      <input onChange={(e) => handleChange(e)} value={helloAtom} />
+      <input
+        className="input"
+        onChange={(e) => handleChange(e)}
+        value={helloAtom}
+      />
     </div>
   );
 };
