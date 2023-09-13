@@ -1,7 +1,6 @@
 import { defineConfig } from "astro/config";
 import react from "@astrojs/react";
 import node from "@astrojs/node";
-import image from "@astrojs/image";
 import mdx from "@astrojs/mdx";
 import partytown from "@astrojs/partytown";
 import prefetch from "@astrojs/prefetch";
@@ -13,9 +12,6 @@ import vercel from "@astrojs/vercel/serverless";
 export default defineConfig({
   integrations: [
     react(),
-    image({
-      serviceEntryPoint: "@astrojs/image/sharp",
-    }),
     mdx(),
     partytown(),
     prefetch(),
